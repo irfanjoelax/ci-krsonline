@@ -3,21 +3,24 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-8 mx-auto">
+			<?= $this->session->flashdata('notif') ?>
 			<div class="card shadow">
 				<div class="card-body">
 					<h5 class="card-title">Halaman Masuk <?= TITLE ?></h5>
-					<hr class="bg-success">
-					<form method="POST" action="#">
+					<hr>
+					<form method="POST" action="<?= site_url('welcome') ?>">
 						<div class="form-group row">
 							<label for="nim" class="col-sm-3 col-form-label">NIM</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" name="nim">
+								<input type="text" class="form-control" name="nim" placeholder="masukkan NIM anda" value="<?= set_value('email') ?>">
+								<?= form_error('nim', '<small class="text-danger pl-1">', '</small>') ?>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="password" class="col-sm-3 col-form-label">Password</label>
 							<div class="col-sm-9">
-								<input type="password" class="form-control" name="password">
+								<input type="password" class="form-control" name="password" placeholder="masukkan password anda">
+								<?= form_error('password', '<small class="text-danger pl-1">', '</small>') ?>
 							</div>
 						</div>
 						<div class="form-group row">

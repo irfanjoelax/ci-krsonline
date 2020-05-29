@@ -13,3 +13,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 // custom route
 $route['migrate/(:num)'] = 'migration/migrate/version/$1';
+$route['seeder/(:any)'] = 'migration/migrate/seeder/$1';

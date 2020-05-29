@@ -34,10 +34,25 @@ class Migrate extends CI_Controller
    public function seeder($table)
    {
       // data untuk user
-      // $data = array();
+      $data = array(
+         array(
+            'nim_mhs'   => 1,
+            'fklt_id'   => 0,
+            'prd_id'    => 0,
+            'nama_mhs'  => 'Administrator',
+            'pass_mhs'  => password_hash('admin020412', PASSWORD_DEFAULT),
+         ),
+         array(
+            'nim_mhs'   => 150105011,
+            'fklt_id'   => 1,
+            'prd_id'    => 1,
+            'nama_mhs'  => 'Muhammad Irfan Permana',
+            'pass_mhs'  => password_hash('irfan020412', PASSWORD_DEFAULT),
+         )
+      );
 
-      // $this->db->insert($table, $data);
-      // echo 'Seeder Table ' . $table . ' is Successfully';
+      $this->db->insert_batch($table, $data);
+      echo 'Seeder Table ' . $table . ' is Successfully';
    }
 
    // function untuk mengkosong table 
