@@ -40,7 +40,7 @@ class Migrate extends CI_Controller
       // echo 'Seeder Table ' . $table . ' is Successfully';
    }
 
-   // function untuk menghapus atau mengkosong table 
+   // function untuk mengkosong table 
    public function truncate($table)
    {
       $this->db->truncate($table);
