@@ -1,4 +1,4 @@
-<?php $this->load->view('header') ?>
+<?php $this->load->view('templates/header') ?>
 
 <div class="container">
    <div class="row">
@@ -24,4 +24,4 @@
    </div>
 </div>
 
-<?php $this->load->view('footer') ?>
+<?php $this->load->view('templates/footer') ?>

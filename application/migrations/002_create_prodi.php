@@ -21,6 +21,9 @@ class Migration_create_prodi extends CI_Migration
             'type' => 'VARCHAR',
             'constraint' => '100',
          ),
+         'time_prd' => array(
+            'type' => 'DATETIME',
+         ),
       ));
       $this->dbforge->add_key('id_prd', TRUE);
       $this->dbforge->create_table('prodi');

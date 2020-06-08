@@ -7,27 +7,29 @@
          <div class="card shadow">
             <div class="card-body">
                <h5 class="card-title">
-                  Master Data Fakultas
-                  <a href="<?= site_url('admin/fakultas/tambah') ?>" class="btn btn-sm btn-primary float-right">Tambah Fakultas</a>
+                  Master Data Program Studi
+                  <a href="<?= site_url('admin/prodi/tambah') ?>" class="btn btn-sm btn-primary float-right">Tambah Prodi</a>
                </h5>
                <hr>
                <table class="table table-sm table-bordered" width="100%">
                   <thead>
                      <tr class="text-center">
-                        <th class="valign-middle" width="40">#</th>
-                        <th class="valign-middle">Nama Fakultas</th>
-                        <th class="valign-middle" width="150">Tombol Aksi</th>
+                        <th width="40">#</th>
+                        <th>Nama Prodi</th>
+                        <th width="300">Fakultas</th>
+                        <th width="150">Tombol Aksi</th>
                      </tr>
                   </thead>
                   <tbody>
                      <?php $no = 1;
-                     foreach ($fakultas as $fklt) : ?>
+                     foreach ($prodi as $prd) : ?>
                         <tr class="text-center">
                            <td><?= $no++ ?></td>
-                           <td><?= $fklt->nama_fklt ?></td>
+                           <td><?= $prd->nama_prd ?></td>
+                           <td><?= $prd->nama_fklt ?></td>
                            <td>
-                              <a href="<?= site_url('admin/fakultas/ubah/' . $fklt->id_fklt) ?>" class="btn btn-sm btn-warning">ubah</a>
-                              <a href="<?= site_url('admin/fakultas/hapus/' . $fklt->id_fklt) ?>" class="btn btn-sm btn-danger">hapus</a>
+                              <a href="<?= site_url('admin/prodi/ubah/' . $prd->id_prd) ?>" class="btn btn-sm btn-warning">ubah</a>
+                              <a href="<?= site_url('admin/prodi/hapus/' . $prd->id_prd) ?>" class="btn btn-sm btn-danger">hapus</a>
                            </td>
                         </tr>
                      <?php endforeach; ?>
