@@ -35,7 +35,7 @@ class Welcome extends CI_Controller
 
 		// proses eksekusi
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('login');
+			$this->load->view('v_login');
 		} else {
 			$this->_login();
 		}

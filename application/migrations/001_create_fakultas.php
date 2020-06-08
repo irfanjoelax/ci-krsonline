@@ -16,6 +16,9 @@ class Migration_create_fakultas extends CI_Migration
             'type' => 'VARCHAR',
             'constraint' => '100',
          ),
+         'time_fklt' => array(
+            'type' => 'DATETIME',
+         ),
       ));
       $this->dbforge->add_key('id_fklt', TRUE);
       $this->dbforge->create_table('fakultas');

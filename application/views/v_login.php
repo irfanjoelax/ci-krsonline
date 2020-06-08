@@ -26,7 +26,7 @@
 						<div class="form-group row">
 							<div class="col-sm-9 offset-sm-3">
 								<button type="submit" class="btn btn-success">
-									<i class="zmdi zmdi-sign-in mr-1"></i>&nbsp;L O G I N
+									<i class="zmdi zmdi-sign-in mr-1"></i>&nbsp;M A S U K
 								</button>
 							</div>
 						</div>
