@@ -10,6 +10,7 @@ class Prodi extends CI_Controller
       parent::__construct();
 
       $this->load->library('form_validation');
+      $this->load->helper('bcrypt');
 
       if ($this->session->userdata('level') != 1) {
          return redirect(site_url('/'));
@@ -20,7 +21,6 @@ class Prodi extends CI_Controller
    public function index()
    {
       $parsing['prodi'] = $this->m_prodi->getAllData();
-
       $this->load->view('admin/prodi/v_read', $parsing);
    }
 
@@ -52,10 +52,12 @@ class Prodi extends CI_Controller
    //! fungsi edit data
    public function ubah($id)
    {
+      // decrypt id
+      $id_code = bcrypt_decode($id);
       // jika gagal
       if ($this->form_validation->run('prodi') == FALSE) {
          $parsing['fakultas'] = $this->m_fakultas->getAllData();
-         $parsing['prd'] = $this->m_prodi->getIdData($id);
+         $parsing['prd'] = $this->m_prodi->getIdData($id_code);
          $this->load->view('admin/prodi/v_edit', $parsing);
       }
       // jika berhasil
@@ -75,8 +77,10 @@ class Prodi extends CI_Controller
    //! fungsi edit data
    public function hapus($id)
    {
+      // decrypt id
+      $id_code = bcrypt_decode($id);
       // proses data
-      $this->m_prodi->goDeleteData($id);
+      $this->m_prodi->goDeleteData($id_code);
       // flash message
       $this->session->set_flashdata('notif', '<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>selamat !</strong> data prodi telah berhasil dihapus.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
       // redirect halaman

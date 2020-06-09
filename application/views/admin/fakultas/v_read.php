@@ -26,8 +26,8 @@
                            <td><?= $no++ ?></td>
                            <td><?= $fklt->nama_fklt ?></td>
                            <td>
-                              <a href="<?= site_url('admin/fakultas/ubah/' . $fklt->id_fklt) ?>" class="btn btn-sm btn-warning">ubah</a>
-                              <a href="<?= site_url('admin/fakultas/hapus/' . $fklt->id_fklt) ?>" class="btn btn-sm btn-danger">hapus</a>
+                              <a href="<?= site_url('admin/fakultas/ubah/' . bcrypt_encode($fklt->id_fklt)) ?>" class="btn btn-sm btn-warning">ubah</a>
+                              <a href="<?= site_url('admin/fakultas/hapus/' . bcrypt_encode($fklt->id_fklt)) ?>" class="btn btn-sm btn-danger">hapus</a>
                            </td>
                         </tr>
                      <?php endforeach; ?>

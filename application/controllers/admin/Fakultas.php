@@ -10,6 +10,7 @@ class Fakultas extends CI_Controller
       parent::__construct();
 
       $this->load->library('form_validation');
+      $this->load->helper('bcrypt');
 
       if ($this->session->userdata('level') != 1) {
          return redirect(site_url('/'));
@@ -50,9 +51,11 @@ class Fakultas extends CI_Controller
    //! fungsi edit data
    public function ubah($id)
    {
+      // decrypt id
+      $id_code = bcrypt_decode($id);
       // jika gagal
       if ($this->form_validation->run('fakultas') == FALSE) {
-         $parsing['fklt'] = $this->m_fakultas->getIdData($id);
+         $parsing['fklt'] = $this->m_fakultas->getIdData($id_code);
          $this->load->view('admin/fakultas/v_edit', $parsing);
       }
       // jika berhasil
@@ -72,8 +75,10 @@ class Fakultas extends CI_Controller
    //! fungsi edit data
    public function hapus($id)
    {
+      // decrypt id
+      $id_code = bcrypt_decode($id);
       // proses data
-      $this->m_fakultas->goDeleteData($id);
+      $this->m_fakultas->goDeleteData($id_code);
       // flash message
       $this->session->set_flashdata('notif', '<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>selamat !</strong> data fakultas telah berhasil dihapus.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
       // redirect halaman

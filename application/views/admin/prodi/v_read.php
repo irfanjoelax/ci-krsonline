@@ -28,8 +28,8 @@
                            <td><?= $prd->nama_prd ?></td>
                            <td><?= $prd->nama_fklt ?></td>
                            <td>
-                              <a href="<?= site_url('admin/prodi/ubah/' . $prd->id_prd) ?>" class="btn btn-sm btn-warning">ubah</a>
-                              <a href="<?= site_url('admin/prodi/hapus/' . $prd->id_prd) ?>" class="btn btn-sm btn-danger">hapus</a>
+                              <a href="<?= site_url('admin/prodi/ubah/' . bcrypt_encode($prd->id_prd)) ?>" class="btn btn-sm btn-warning">ubah</a>
+                              <a href="<?= site_url('admin/prodi/hapus/' . bcrypt_encode($prd->id_prd)) ?>" class="btn btn-sm btn-danger">hapus</a>
                            </td>
                         </tr>
                      <?php endforeach; ?>
