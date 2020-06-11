@@ -23,6 +23,12 @@ class Prodi_model extends CI_Model
       return $this->db->get_where($this->_table, ['id_prd' => $id])->row();
    }
 
+   //! fungsi ambil 1 data berdasarkan Id fakultas
+   public function getFakultasId($id)
+   {
+      return $this->db->get_where($this->_table, ['fklt_id' => $id])->result();
+   }
+
    //! fungsi simpan data
    public function goInsertData($data = array())
    {

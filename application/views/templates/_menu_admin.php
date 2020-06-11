@@ -7,16 +7,9 @@
 <a class="nav-item nav-link ml-2 <?php if ($c == 'admin' and $m == 'prodi') echo 'active font-weight-bold text-success' ?>" href="<?= site_url('admin/prodi') ?>">
    <i class="zmdi zmdi-graduation-cap mr-1"></i>&nbsp;Prodi
 </a>
-<li class="nav-item dropdown">
-   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <i class="zmdi zmdi-settings mr-1"></i>&nbsp;Pengaturan
-   </a>
-   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-      <a class="dropdown-item" href="#">
-         <i class="zmdi zmdi-lock mr-1"></i>&nbsp;Ubah Password
-      </a>
-      <a class="dropdown-item" href="<?= site_url('welcome/logout') ?>">
-         <i class="zmdi zmdi-close-circle mr-1"></i>&nbsp;Keluar
-      </a>
-   </div>
-</li>
+<a class="nav-item nav-link ml-2 <?php if ($c == 'admin' and $m == 'mahasiswa') echo 'active font-weight-bold text-success' ?>" href="<?= site_url('admin/mahasiswa') ?>">
+   <i class="zmdi zmdi-library mr-1"></i>&nbsp;Mahasiswa
+</a>
+<a class="nav-item nav-link ml-2" href="<?= site_url('welcome/logout') ?>">
+   <i class="zmdi zmdi-sign-in mr-1"></i>&nbsp;Keluar
+</a>

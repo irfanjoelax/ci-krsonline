@@ -74,7 +74,7 @@ class Prodi extends CI_Controller
       }
    }
 
-   //! fungsi edit data
+   //! fungsi delete data
    public function hapus($id)
    {
       // decrypt id

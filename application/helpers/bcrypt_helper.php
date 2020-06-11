@@ -7,9 +7,9 @@ function bcrypt_encode($string)
    return $encrypt_result;
 }
 
-function bcrypt_decode($string)
+function bcrypt_decode($string, $length = 5)
 {
    $decrypt_text = base64_decode($string);
-   $decrypt_result = substr($decrypt_text, 12, 5);
+   $decrypt_result = substr($decrypt_text, 12, $length);
    return $decrypt_result;
 }
