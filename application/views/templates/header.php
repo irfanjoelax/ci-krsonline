@@ -38,7 +38,7 @@
                   } else if ($this->session->userdata('level') == 2) {
                      $this->load->view('templates/_menu_mahasiswa', $parsing);
                   } else {
-                     //
+                     $this->load->view('templates/_menu_auth', $parsing);
                   }
                   ?>
              </div>

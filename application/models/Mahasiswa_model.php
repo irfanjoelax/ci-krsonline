@@ -19,7 +19,7 @@ class Mahasiswa_model extends CI_Model
    }
 
    //!fungsi ambli satu data berdasarkan nim
-   public function get_where_nim($nim)
+   public function getWhereNim($nim)
    {
       return $this->db->get_where($this->_table, $nim)->row_array();
    }

@@ -20,7 +20,7 @@
       $('#fklt_id').change(function() {
          $.ajax({
             type: "GET",
-            url: "<?= site_url('admin/mahasiswa/data_prodi/') ?>" + $('#fklt_id').val(),
+            url: "<?= site_url('ajax/data_prodi/') ?>" + $('#fklt_id').val(),
             dataType: "JSON",
             beforeSend: function() {
                $('#prd_id').html('<option value="">Sedang memuat..</option>');

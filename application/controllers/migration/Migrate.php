@@ -40,15 +40,11 @@ class Migrate extends CI_Controller
             'fklt_id'   => 0,
             'prd_id'    => 0,
             'nama_mhs'  => 'Administrator',
+            'email_mhs' => 'admin@admin.com',
             'pass_mhs'  => password_hash('admin020412', PASSWORD_DEFAULT),
+            'is_active' => 1,
+            'time_mhs'  => date('Y-m-d H:i:s')
          ),
-         array(
-            'nim_mhs'   => 150105011,
-            'fklt_id'   => 1,
-            'prd_id'    => 1,
-            'nama_mhs'  => 'Muhammad Irfan Permana',
-            'pass_mhs'  => password_hash('irfan020412', PASSWORD_DEFAULT),
-         )
       );
 
       $this->db->insert_batch($table, $data);
